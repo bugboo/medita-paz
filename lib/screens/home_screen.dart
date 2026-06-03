@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../animations/page_transitions.dart';
 import 'meditation_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,16 +7,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Medita em Paz")),
       body: Center(
         child: ElevatedButton(
+          child: const Text("Começar meditação"),
           onPressed: () {
             Navigator.push(
               context,
-              PageTransitions.fadeRoute(const MeditationScreen()),
+              MaterialPageRoute(
+                builder: (_) => const MeditationScreen(),
+              ),
             );
           },
-          child: const Text("Escolher sessão"),
         ),
       ),
     );
